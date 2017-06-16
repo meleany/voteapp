@@ -1,0 +1,302 @@
+/***** Main Styling *****/
+
+body {
+	background-color: rgba(255,0,0,0.5);
+	font-family: "Belleza", sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	border-radius: 20px;
+}
+
+h1{
+	font-family: "Baloo";
+	color: rgb(135,206,250);
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.9);	
+} 
+
+a{
+	color: rgb(255,255,255);	
+	text-decoration: none;
+}
+
+p {
+	margin: 8px 0 0 0;
+}
+
+.container{
+	margin-bottom: 60px;
+	display: inline-block;
+	width: 100%;
+}
+
+/***** Header Styling *****/
+
+header {
+	font-size: 18px;	
+	color: rgb(255,255,255);
+	background-color: darkred;
+	height: 42px;
+}
+
+header a{
+	float: right;
+	display: block;
+	padding: 10px;
+}
+
+header img{
+	padding: 2px;
+	margin-left: 10px;
+}
+
+.menu:hover {
+	color: rgb(250,255,150);
+}
+
+#home{
+	float: left;
+}
+
+#display-name {
+	font-weight: 400;
+}
+
+/***** Footer Styling *****/
+
+footer{
+	background-color:darkred;
+	color: rgb(255,255,255);
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.9);
+	text-align: center;
+	height: 50px;
+	padding: 15px;
+}
+
+footer a{
+	color: rgb(255,255,255);
+	padding: 5px;
+}
+
+/***** Login Styling *****/
+
+.logo{
+	text-align: center;
+	margin-top: 30px;
+}
+
+#app-name{
+	font-family:"Bungee Shade";
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 50px;
+	color: rgb(255,255,255);
+	padding: 10px;
+}
+
+.cols{
+	margin-top: 50px;
+	text-align: justify;
+}
+
+.column{
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 5px;
+	width: 42%;
+	padding: 40px;
+}
+
+#col-left { float: left; margin-left: 20px;}
+#col-right { float: right; margin-right: 20px;}
+
+#login-btn {
+	width: 50%;
+	margin: auto;
+	margin-bottom: 25px;
+}
+
+/***** Buttons Styling *****/
+
+.btn {	/* Styling for buttons */
+	background-color: rgb(135,206,250);
+	font-size: 15px;
+	color: rgb(255,255,255);
+	text-align: center;
+	padding: 5px 20px;
+	border-radius: 10px;
+}
+
+.btn-poll{
+	font-weight: bold;
+	width: 200px;
+}
+
+#btn-active{
+	background-color: rgb(105,176,220);
+}
+
+/***** Profile Styling *****/
+
+.dashboard{
+	font-family: "Marcellus SC";
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 3px 3px 5px rgba(0,0,0,0.7);//(255,255,255,0.9);
+	background-color: rgba(255,255,255,0.8);
+	padding: 30px;
+	height: 250px;
+}
+
+/***** Poll Form Styling *****/
+
+.poll-form{
+	font-family: "Marcellus SC";	
+	font-size: 18px;	
+	width: 50%;
+	margin: 20px auto;
+}
+
+.poll-form h1{
+	text-align: center;
+}
+
+input[type=text]{
+	width: 100%;
+	display: block;
+  border: 1px solid #ccc;	
+  box-sizing: border-box;	
+	border-radius: 5px;
+	margin: 10px auto;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
+input[type=button]{
+	font-family: "Baloo";
+	color: white;
+	background-color: #4CAF50; 
+	display: block;
+	width: 30%;
+	margin: 5px auto;
+	padding: 8px 20px;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+input[type=submit]{
+	font-family: "Baloo";
+	color: white;
+	background-color: #4CAF50; 
+	display: block;
+	width: 30%;
+	margin: 5px auto;
+	padding: 8px 20px;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover{
+	background-color: #45a049;
+}
+
+/***** Poll Page Styling *****/
+
+input[type=radio] + label{
+	font-family: "Marcellus SC";
+	font-size: 18px;
+	display: inline-block;
+	cursor: pointer;
+	padding-bottom:25px;
+}
+
+#poll-info{
+	float: left;
+	margin-left: 50px;
+}
+
+#poll-chart{
+	float: right;
+	margin-right: 100px;
+	text-align: center;
+}
+
+#extra{
+	font-weight: 900;
+	font-size: 22px;
+	color: white;
+}
+
+#poll-info h2{
+	overflow: auto;
+	width: 600px;
+}
+
+#form-voting span{
+	display: inline-block;
+	width: 50px;
+}
+
+#voteArea{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+#opt{
+	margin-right: 130px;
+}
+
+#btn-share{	
+	border: 2px;
+	background-color: rgb(59, 89, 152);
+	border-style: outset; 
+	//display: block;
+	//width: 300px;
+	//margin-top: 50px;
+}
+
+/***** Lists Styling *****/
+
+ul{
+	text-align: center;
+	list-style: none;
+}
+
+ul li button{
+	margin: 20px;
+	width: 150px;
+}
+
+li{
+	font-size: 20px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.6);
+	border: 4px solid rgb(255,255,255);
+	padding: 10px;
+	margin: 20px;
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	min-height: 250px;
+	overflow: auto;
+}
+
+.lists{
+	padding: 50px;
+}
+
+.info{
+	vertical-align: middle;
+	margin-top: 20px;
+}
+
+#author{
+	color: white;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}

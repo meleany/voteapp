@@ -1,0 +1,24 @@
+{
+  "name": "voteapp",
+  "version": "1.0.0",
+  "description": "A voting App project developed for FreeCodeCamp",
+  "main": "server.js",
+  "engines": {
+    "node": "5.2.0",
+    "npm": "3.5.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Yasmin Melean",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.2",
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0"
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html ng-app="voteapp">
+  
+  <head>
+		<title>Voting App</title>
+		<link href="/public/css/style.css" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Belleza', rel='stylesheet', type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bungee Shade', rel='stylesheet', type='text/css'>
+		<link href="/public/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-resource.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script> 
+		<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script type="text/javascript" src="controllers/clickController.client.js"></script>
+  </head>
+  
+  <body>
+    
+		<header ng-controller="logController">
+				<img id="home" src="/public/img/Logo_35px.png" alt="app logo" />
+				<a id="home">VotApp</a>
+				<a class="menu" id="home" href="/"><i class="fa fa-home fa-lg"></i></a>
+				<a class="menu" href="/auth/github" ng-hide="logged">Sign In <i class="fa fa-github fa-lg"></i></a>
+				<a class="menu" href="/logout" ng-show="logged">Sign Out <i class="fa fa-github fa-lg"></i></a>
+				<a class="menu" href="/list">Polls</a> 
+		</header>
+		
+		<div class="container">
+			
+			<div class="logo">
+				<img src="/public/img/Logo.png" alt="VotApp logo" />
+				<p id="app-name">VotApp</p>
+				<h3>Voting Application Project for FreeCodeCamp</h3>
+			</div>
+			
+			<div class="cols">
+				
+				<div class="column" id="col-left">
+					<a href="/list">
+						<div class="btn" id="login-btn">
+							<p> CHECK THE POLLS</p>
+						</div>
+					</a>
+					<p>Check the existing polls in VotApp and participate or just browse and see
+					what others have to say. It is easy, visit the poll of your interest and 
+					vote! The graph will show your results immediately. No login required!</p>
+				</div>
+				
+				<div class="column" id="col-right">
+					<a href="/auth/github">
+						<div class="btn" id="login-btn">
+							<p>SIGN UP with  <i class="fa fa-github fa-lg"></i> </p>
+						</div>
+					</a>
+					<p>Sign up and keep, share or delete the polls you don't want anymore. Create
+					polls with the possible options, invite your friends. Participate in other people's polls 
+					and if you don't like any of the existing options, no problem, just add a new one.</p>
+				</div>
+				
+			</div>
+			
+		</div>
+
+		<footer>
+			<a href="https://www.freecodecamp.com/meleany" target="_blank">
+				<i class="fa fa-free-code-camp fa-2x fa-fw"></i>
+			</a>
+			<a href="https://github.com/meleany" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+			<a href="https://codepen.io/meleany" target="_blank">
+				<i class="fa fa-codepen fa-2x"></i>
+			</a>
+			<a href="https://ymelbart.wordpress.com" target="_blank"> 
+				<i class="fa fa-wordpress fa-2x"></i>
+			</a>
+			<p> Copyright © 2017 Yasmin Melean </p>
+		</footer>
+		
+  </body>
+	  
+</html>

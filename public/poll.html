@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html ng-app="voteapp">
+	
+	<head>
+		<title>Voting App</title>
+		<link href="/public/css/style.css" rel="stylesheet" type="text/css">
+ 		<link href='https://fonts.googleapis.com/css?family=Belleza', rel='stylesheet', type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Marcellus SC', rel='stylesheet', type='text/css'>    
+		<link href="/public/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-resource.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script> 
+		<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script type="text/javascript" src="controllers/clickController.client.js"></script>
+	</head>
+	
+	<body>
+	
+		<header ng-controller="logController">
+				<img id="home" src="/public/img/Logo_35px.png" alt="app logo" />
+				<a id="home">VotApp</a>
+				<a class="menu" id="home" href="/"><i class="fa fa-home fa-lg"></i></a>
+				<a class="menu" href="/auth/github" ng-hide="logged">Sign In <i class="fa fa-github fa-lg"></i></a>
+				<a class="menu" href="/logout" ng-show="logged">Logout <i class="fa fa-github fa-lg"></i> </a>
+				<a class="menu" href="/list">Polls</a> 
+				<a ng-show="logged">Welcome, {{loginName}}!</a>
+		</header>
+		
+		<div class="container" ng-controller="logController">
+			
+      <div class="dashboard">
+        <h2>Dashboard</h2>
+        <button class="btn btn-poll" ng-click="redirect('/list')">All Polls</button>
+        <button class="btn btn-poll" ng-click="redirect('/profile')" ng-show="logged">My Polls</button>
+      </div>
+			
+			<div class="cols" ng-controller="chartController">
+			
+				<div id="poll-info">
+					
+					<h2>{{pollTitle}}</h2> 
+          <form id="form-voting">
+						<div ng-repeat="option in pollOptions">
+							<input type="radio"  ng-model="$parent.answer" name="vote" value="{{option.voteOption}}"> 
+							<label id="poll-option"> <span id="opt">{{option.voteOption}}</span> </span>{{option.voteCount}}</span> </label>
+						</div>
+						<div id="voteArea">
+							<button type="submit" class="btn btn-add" ng-click="submitVote()"> SUBMIT VOTE!</button>	
+							<label for="votebtn"> <sup>**</sup>You are chosing to vote for: <span id="extra"> {{answer}} </span></label>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-add" ng-click="addOption(newOpt)" ng-show="logged"> ADD OPTION</button>
+							<input type="text" ng-model="newOpt" placeholder="Your option not there? Add a new one" maxlength="100" ng-show="logged">
+							<button type="submit" class="btn btn-add" ng-click="deletePoll()" ng-show="logged && (loginName==userLogin)"> DELETE POLL</button>
+							<a class="btn btn-add" id="btn-share" href={{sharefbUrl}} target="_blank" ng-show="logged && (loginName==userLogin)"> 
+								SHARE ON FACEBOOK!
+							</a>
+						</div>
+          </form>
+					</br>
+					<p> Poll created by:<span id="extra"> {{userLogin}} </span></p>
+					</br>
+					<p><sup>**</sup>You can vote in this poll only once. You can't change your submitted vote.</p>
+				</div>
+				
+				<div id="poll-chart">
+					<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="charOptions" 
+									chart-colors="colors" height="450" width="450">
+				</div> 
+					
+			</div>  
+			
+		</div>
+		
+		<footer>
+			<a href="https://www.freecodecamp.com/meleany" target="_blank">
+				<i class="fa fa-free-code-camp fa-2x fa-fw"></i>
+			</a>
+			<a href="https://github.com/meleany" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+			<a href="https://codepen.io/meleany" target="_blank">
+				<i class="fa fa-codepen fa-2x"></i>
+			</a>
+			<a href="https://ymelbart.wordpress.com" target="_blank"> 
+				<i class="fa fa-wordpress fa-2x"></i>
+			</a>
+			<p> Copyright © 2017 Yasmin Melean </p>
+		</footer>
+	
+	</body>
+	
+</html>

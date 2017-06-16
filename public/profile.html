@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html ng-app="voteapp">
+
+	<head>
+		<title>Voting App</title>
+		<link href="/public/css/style.css" rel="stylesheet" type="text/css">
+ 		<link href='https://fonts.googleapis.com/css?family=Belleza', rel='stylesheet', type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Marcellus SC', rel='stylesheet', type='text/css'>    
+		<link href="/public/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular-resource.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script> 
+		<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script type="text/javascript" src="controllers/clickController.client.js"></script>
+	
+	</head>
+	
+	<body>
+		
+		<header ng-controller="logController">
+				<img id="home" src="/public/img/Logo_35px.png" alt="app logo" />
+				<a id="home">VotApp</a>
+				<a class="menu" id="home" href="/"><i class="fa fa-home fa-lg"></i></a>
+				<a class="menu" href="/logout">Logout</a>
+				<a class="menu" href="/list">Polls</a> 
+				<a>Welcome, {{loginName}}!</a>
+		</header>
+	
+		<div class="container">
+		
+			<div class="dashboard" ng-controller="logController"> 
+				<h2>Dashboard</h2>
+				<button class="btn btn-poll" ng-click="redirect('/profile')">My Polls</button>
+				<button id="btn-active" class="btn btn-poll" ng-click="redirect('/form')">New Poll</button>
+			</div>
+			
+			<div class="lists" ng-controller="listController">
+				<h3>You have a total of {{userNumPolls}} Polls.</h3>
+				<ul>
+					<li ng-repeat="item in useResults">
+						<div class="info">
+						<button class="btn" ng-click="visit(item.username, item.pollName)">VISIT POLL</button>
+							<p>{{item.pollName}}</p>
+						<p id="author">Created by: {{item.username}}</p>
+						</div>
+					</li>
+				</ul>
+			
+			</div>
+		</div>
+		
+	</body>
+	
+	<footer>
+			<a href="https://www.freecodecamp.com/meleany" target="_blank">
+				<i class="fa fa-free-code-camp fa-2x fa-fw"></i>
+			</a>
+			<a href="https://github.com/meleany" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+			<a href="https://codepen.io/meleany" target="_blank">
+				<i class="fa fa-codepen fa-2x"></i>
+			</a>
+			<a href="https://ymelbart.wordpress.com" target="_blank"> 
+				<i class="fa fa-wordpress fa-2x"></i>
+			</a>
+			<p> Copyright © 2017 Yasmin Melean </p>
+	</footer>
+	
+</html>
